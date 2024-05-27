@@ -17,17 +17,6 @@ class MoviesBloc extends Bloc<MoviesEvent, MoviesState> {
         emit(NowPlayingErrorState());
       }
     });
-
-    on<TopRatedEvent>((event, emit) async {
-      emit(TopRatedLoadingState());
-      await Future.delayed(const Duration(seconds: 2));
-      try {
-        final res = await networkService.getTopRatedMovies();
-        emit(TopRatedMoviesState(topRated: res));
-      } catch (e) {
-        emit(TopRatedErrorState());
-      }
-    });
   }
 }
 

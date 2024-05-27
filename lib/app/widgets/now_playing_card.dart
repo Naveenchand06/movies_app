@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:glassmorphism/glassmorphism.dart';
+import 'package:wework_movies/app/home/models/now_playing_movies.dart';
 import 'package:wework_movies/app/widgets/row_icon_widget.dart';
 
 class NowPlayingCard extends StatelessWidget {
-  const NowPlayingCard({super.key});
+  const NowPlayingCard({
+    super.key,
+    required this.data,
+  });
+
+  final Result data;
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +40,7 @@ class NowPlayingCard extends StatelessWidget {
                 color: Colors.white.withOpacity(0.5),
               ),
               child: Text(
-                "6.67 ⭐️",
+                "${data.voteAverage?.toStringAsFixed(2) ?? 0} ⭐️",
                 style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                       fontWeight: FontWeight.w600,
                       fontSize: 14.0,
@@ -130,22 +136,22 @@ class NowPlayingCard extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            "Godzilla X Kong: The New Empire",
+                            data.originalTitle ?? "Not Available",
+                            overflow: TextOverflow.ellipsis,
                             style:
                                 Theme.of(context).textTheme.bodyLarge?.copyWith(
                                       fontWeight: FontWeight.w600,
-                                      fontSize: 14.0,
+                                      fontSize: 16.0,
                                       color: Colors.white,
                                     ),
                           ),
                           const SizedBox(height: 10.0),
-                          const RowIconWidget(
-                            text:
-                                "Following their explosive showdown, Godzill and kong must reunite.",
+                          RowIconWidget(
+                            text: data.overview ?? "Not Available",
                           ),
                           const SizedBox(height: 10.0),
                           Text(
-                            "716 Votes",
+                            "${data.voteCount} Votes",
                             style: Theme.of(context)
                                 .textTheme
                                 .bodyMedium
