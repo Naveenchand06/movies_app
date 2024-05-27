@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:wework_movies/app/app.dart';
+import 'dart:math';
+import 'package:flutter/material.dart';
 
 class IntroScreen extends StatefulWidget {
   const IntroScreen({super.key});

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wework_movies/app/app.dart';
 import 'package:wework_movies/app/home/bloc/movies_bloc.dart';
+import 'package:wework_movies/app/home/intro_screen.dart';
 import 'package:wework_movies/utils/themes/text_theme.dart';
 
 void main() {

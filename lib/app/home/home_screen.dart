@@ -102,27 +102,13 @@ class _HomeScreenState extends State<HomeScreen> {
                           height: screenSize.height * 0.40,
                           child: ListView(
                             scrollDirection: Axis.horizontal,
-                            children: state.nowPlaying.results
+                            children: [1, 2, 3, 4, 5]
                                 .map(
-                                  (e) => NowPlayingCard(
-                                    data: e,
-                                  ),
+                                  (e) => const NowPlayingCard(),
                                 )
                                 .toList(),
                           ),
                         );
-
-                        // return SizedBox(
-                        //   height: screenSize.height * 0.40,
-                        //   child: ListView(
-                        //     scrollDirection: Axis.horizontal,
-                        //     children: [1, 2, 3, 4, 5]
-                        //         .map(
-                        //           (e) => const NowPlayingCard(),
-                        //         )
-                        //         .toList(),
-                        //   ),
-                        // );
                       }
 
                       return const Text('Testing.....');

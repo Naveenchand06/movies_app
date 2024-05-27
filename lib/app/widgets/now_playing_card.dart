@@ -1,15 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:glassmorphism/glassmorphism.dart';
-import 'package:wework_movies/app/home/models/now_playing_movies.dart';
 import 'package:wework_movies/app/widgets/row_icon_widget.dart';
 
 class NowPlayingCard extends StatelessWidget {
-  const NowPlayingCard({
-    super.key,
-    required this.data,
-  });
-
-  final Result data;
+  const NowPlayingCard({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +34,7 @@ class NowPlayingCard extends StatelessWidget {
                 color: Colors.white.withOpacity(0.5),
               ),
               child: Text(
-                "${data.voteAverage?.toStringAsFixed(2) ?? 0} ⭐️",
+                "6.67 ⭐️",
                 style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                       fontWeight: FontWeight.w600,
                       fontSize: 14.0,
@@ -136,22 +130,22 @@ class NowPlayingCard extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            data.originalTitle ?? "Not Available",
-                            overflow: TextOverflow.ellipsis,
+                            "Godzilla X Kong: The New Empire",
                             style:
                                 Theme.of(context).textTheme.bodyLarge?.copyWith(
                                       fontWeight: FontWeight.w600,
-                                      fontSize: 16.0,
+                                      fontSize: 14.0,
                                       color: Colors.white,
                                     ),
                           ),
                           const SizedBox(height: 10.0),
-                          RowIconWidget(
-                            text: data.overview ?? "Not Available",
+                          const RowIconWidget(
+                            text:
+                                "Following their explosive showdown, Godzill and kong must reunite.",
                           ),
                           const SizedBox(height: 10.0),
                           Text(
-                            "${data.voteCount} Votes",
+                            "716 Votes",
                             style: Theme.of(context)
                                 .textTheme
                                 .bodyMedium
